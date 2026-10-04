@@ -1,0 +1,10 @@
+{
+  "name": "SocialSystemTweaks",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/cjayride/Cjayride.SocialSystemTweaks",
+  "description": "SocialSystem patch: show party invites during combat, and HP numbers on party health bars.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2351",
+    "M2Valheim-SocialSystem-1.0.4"
+  ]
+}
