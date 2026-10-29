@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <VALHEIM_INSTALL>D:\SteamLibrary\steamapps\common\Valheim</VALHEIM_INSTALL>
-    <SOCIALSYSTEM_DLL>C:\Users\cjrob\AppData\Roaming\com.kesomannen.gale\cache\M2Valheim-SocialSystem\1.0.4\BepInEx\plugins\M2Valheim-SocialSystem\SocialSystem.dll</SOCIALSYSTEM_DLL>
+    <SOCIALSYSTEM_DLL>C:\Users\cjrob\AppData\Roaming\com.kesomannen.gale\cache\M2Valheim-SocialSystem\1.0.5\BepInEx\plugins\M2Valheim-SocialSystem\SocialSystem.dll</SOCIALSYSTEM_DLL>
     <JOTUNN_DLL>C:\Users\cjrob\AppData\Roaming\com.kesomannen.gale\cache\ValheimModding-Jotunn\2.30.2\BepInEx\plugins\ValheimModding-Jotunn\Jotunn.dll</JOTUNN_DLL>
   </PropertyGroup>
 </Project>

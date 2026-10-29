@@ -1,40 +1,34 @@
-# SocialSystem Tweaks
+# 👥 SocialSystem Tweaks
 
-Patch for [M2Valheim SocialSystem](https://thunderstore.io/c/valheim/p/M2Valheim/SocialSystem/). Load it with SocialSystem on the **client**.
+### Combat-Friendly Invites & Party Health Numbers
 
-## Features
+A client-side enhancement for [M2Valheim SocialSystem](https://thunderstore.io/c/valheim/p/M2Valheim/SocialSystem/) that improves party visibility and makes multiplayer interactions more convenient during combat.
 
-- **Invites during combat** — party and friend invite prompts show right away, even while fighting. SocialSystem normally holds them until combat ends.
-- **Party HP text** — current / max health on each party member's HUD bar (for example `85 / 120`).
+## ✨ Features
 
-## Config (`cjayride.SocialSystemTweaks.cfg`)
+- **Invites during combat:** Party and friend invitation prompts can appear while you are fighting, so you don't miss invitations in the middle of an encounter.
+- **Party health numbers:** Displays current and maximum HP directly on party members' HUD health bars.
+- **Configurable behavior:** Control combat-time invitations and party health text through the mod's configuration.
 
-| Section | Key | Default | What it does |
-| --- | --- | --- | --- |
-| Invites | ShowDuringCombat | true | Show invite prompts in combat. Off keeps SocialSystem's hold-until-safe behaviour. |
-| PartyHealthText | Enabled | true | Draw the HP number on party bars. |
-| PartyHealthText | ShowMaxHealth | true | `current / max` instead of current only. |
-| PartyHealthText | FontSize | 12 | Size of the HP text (6–32). |
-| PartyHealthText | Color | white | HP text color. |
-| PartyHealthText | ShadowColor | black | Outline color. |
-| PartyHealthText | ShadowThickness | 1.5 | Outline thickness. 0 turns the outline off. |
+## ⚙️ Configuration
 
-Configuration Manager can change these live.
+### Invites
 
-## Solo test (no second player)
+`Invites / ShowDuringCombat`
 
-In a **local or hosted** world, with `devcommands`:
+Controls whether party and friend invite prompts can appear while you are in combat.
 
-```
-socialsystem_fake add TestFriend
-socialsystem_fake invite TestFriend
-```
+### Party Health
 
-Accept the invite. The party HUD appears on the left. Change dummy HP with `socialsystem_fake vitals TestFriend 42`.
+`PartyHealthText`
 
-## Changelog
+Controls whether current and maximum HP values are displayed on party members' health bars.
 
-### 1.0.0
+The default health display format is:
 
-- Show party and friend invite prompts during combat.
-- Draw current / max HP on party member health bars.
+`Current HP / Max HP`
+
+## 📦 Requirements
+
+- [M2Valheim SocialSystem](https://thunderstore.io/c/valheim/p/M2Valheim/SocialSystem/)
+

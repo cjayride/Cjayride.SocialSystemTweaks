@@ -11,7 +11,7 @@ namespace Cjayride.SocialSystemTweaks
     {
         public const string PluginGuid = "cjayride.SocialSystemTweaks";
         public const string PluginName = "SocialSystem Tweaks";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.0.1";
 
         internal static ConfigEntry<bool> InvitesDuringCombat;
         internal static ConfigEntry<bool> HealthTextEnabled;
