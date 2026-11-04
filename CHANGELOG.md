@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+
+- Verified against Valheim 1.0.21 (latest Steam patch as of 2026-11-05) and SocialSystem 1.0.5.
+- Party HP text no longer rewrites UI layout every frame when the bar has not moved, and skips work when the feature is disabled.
+
 ## 1.0.1
 
 - Verified against Valheim 1.0.21 (Release build).
