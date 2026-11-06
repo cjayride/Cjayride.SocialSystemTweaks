@@ -1,6 +1,6 @@
 {
   "name": "SocialSystemTweaks",
-  "version_number": "1.0.2",
+  "version_number": "1.0.3",
   "website_url": "https://github.com/cjayride/Cjayride.SocialSystemTweaks",
   "description": "SocialSystem patch: show party invites during combat, and HP numbers on party health bars.",
   "dependencies": [

@@ -49,9 +49,14 @@ namespace Cjayride.SocialSystemTweaks
             if (label.Text == null)
                 return;
 
+            // Keep the label under the same row as the bar. SocialSystem can reparent or recycle rows when someone
+            // disconnects; our Text was parented once in Create() and would otherwise float as a sibling.
+            EnsureLabelParent(__instance, label);
+
             MemberVitals current = default;
             bool show = __instance._root.activeSelf
-                && client != null && client.TryGetVitals(playerId, out current) && current.MaxHealth > 0f;
+                && client != null && client.IsOnline(playerId)
+                && client.TryGetVitals(playerId, out current) && current.MaxHealth > 0f;
 
             GameObject go = label.Text.gameObject;
             if (!show)
@@ -74,6 +79,21 @@ namespace Cjayride.SocialSystemTweaks
                 label.ShownMax = max;
                 label.ShowMax = showMax;
                 label.Text.text = showMax ? hp + " / " + max : hp.ToString();
+            }
+        }
+
+        static void EnsureLabelParent(HealthBar bar, Label label)
+        {
+            if (label.Text == null || bar._root == null)
+                return;
+            Transform rowParent = bar._root.transform.parent;
+            if (rowParent == null)
+                return;
+            Transform textTransform = label.Text.transform;
+            if (textTransform.parent != rowParent)
+            {
+                textTransform.SetParent(rowParent, false);
+                textTransform.SetAsLastSibling();
             }
         }
 

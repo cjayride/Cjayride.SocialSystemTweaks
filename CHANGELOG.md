@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+- Hide party HP text when the member is offline/disconnected.
+- Reparent HP labels when SocialSystem moves the health bar row (prevents orphaned text after disconnect).
+
 ## 1.0.2
 
 - Verified against Valheim 1.0.21 (latest Steam patch as of 2026-11-05) and SocialSystem 1.0.5.

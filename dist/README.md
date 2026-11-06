@@ -7,7 +7,7 @@ A client-side enhancement for [M2Valheim SocialSystem](https://thunderstore.io/c
 ## ✨ Features
 
 - **Invites during combat:** Party and friend invitation prompts can appear while you are fighting, so you don't miss invitations in the middle of an encounter.
-- **Party health numbers:** Displays current and maximum HP directly on party members' HUD health bars.
+- **Party health numbers:** Displays current and maximum HP directly on party members' HUD health bars (hidden while they are offline/disconnected).
 - **Configurable behavior:** Control combat-time invitations and party health text through the mod's configuration.
 
 ## ⚙️ Configuration
