@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Cjayride.SocialSystemTweaks
 {
-    [HarmonyPatch(typeof(HealthBar), nameof(HealthBar.Update))]
+    [HarmonyPatch]
     [HarmonyPriority(Priority.Last)]
     internal static class HealthText
     {
@@ -31,7 +31,9 @@ namespace Cjayride.SocialSystemTweaks
         static readonly ConditionalWeakTable<HealthBar, Label> Labels = new ConditionalWeakTable<HealthBar, Label>();
         static readonly List<Label> All = new List<Label>();
 
-        static void Postfix(HealthBar __instance, long playerId, SocialClient client)
+        [HarmonyPatch(typeof(HealthBar), nameof(HealthBar.Update))]
+        [HarmonyPostfix]
+        static void AfterUpdate(HealthBar __instance, long playerId, SocialClient client)
         {
             if (__instance?._root == null)
                 return;
@@ -80,6 +82,19 @@ namespace Cjayride.SocialSystemTweaks
                 label.ShowMax = showMax;
                 label.Text.text = showMax ? hp + " / " + max : hp.ToString();
             }
+        }
+
+        // PartyMemberView hides the bar via SetVisible(false) and then skips HealthBar.Update
+        // while the reserved "disconnected" timer is shown. The HP label is a sibling of the
+        // bar, so it stays on the plate unless we hide it here.
+        [HarmonyPatch(typeof(HealthBar), nameof(HealthBar.SetVisible))]
+        [HarmonyPostfix]
+        static void AfterSetVisible(HealthBar __instance, bool visible)
+        {
+            if (visible || !Labels.TryGetValue(__instance, out Label label) || label.Text == null)
+                return;
+            if (label.Text.gameObject.activeSelf)
+                label.Text.gameObject.SetActive(false);
         }
 
         static void EnsureLabelParent(HealthBar bar, Label label)

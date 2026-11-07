@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4
+
+- Hide party HP text when SocialSystem hides the health bar for a disconnected member (Update is not called during the reserved-slot timer).
+
 ## 1.0.3
 
 - Hide party HP text when the member is offline/disconnected.
